@@ -1,5 +1,5 @@
 @NonCPS
-void call() {
+List call() {
     List files = []
     def build = currentBuild
     while (build != null && build.result != 'SUCCESS') {
