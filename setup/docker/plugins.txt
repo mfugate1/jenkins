@@ -1,0 +1,8 @@
+configuration-as-code
+docker-plugin
+generic-webhook-trigger
+github
+groovy
+http_request
+job-dsl
+simple-theme-plugin

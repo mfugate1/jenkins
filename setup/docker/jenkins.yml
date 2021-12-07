@@ -1,0 +1,67 @@
+jenkins:
+  slaveAgentPort: 50000
+  systemMessage: Overlord Jenkins
+  numExecutors: 0
+  quietPeriod: 0
+  mode: EXCLUSIVE
+  agentProtocols:
+    - JNLP4-connect
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  clouds:
+  - docker:
+      containerCap: 1
+      dockerApi:
+        connectTimeout: 60
+        dockerHost:
+          uri: unix:///var/run/docker.sock
+        readTimeout: 60
+      name: docker
+      templates:
+      - connector: attach
+        dockerTemplateBase:
+          cpuPeriod: 0
+          cpuQuota: 0
+          image: mfugate/jenkins-worker:latest
+        labelString: "python3 chrome selenium docker"
+        mode: EXCLUSIVE
+        name: docker-node
+        pullTimeout: 300
+        stopTimeout: 1
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+        - usernamePassword:
+            username: ${GARMIN_CONNECT_USERNAME}
+            password: ${GARMIN_CONNECT_PASSWORD}
+            id: garmin-connect
+            scope: GLOBAL
+        - basicSSHUserPrivateKey:
+            id: docker1-ssh
+            privateKeySource:
+              directEntry:
+                privateKey: |
+                  ${DOCKER1_SSH_PRIVATE_KEY}
+            scope: GLOBAL
+            username: jenkins
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+unclassified:
+  globalLibraries:
+    libraries:
+      - defaultVersion: main
+        implicit: true
+        includeInChangesets: false
+        name: jenkins-pipeline-library
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: https://github.com/mfugate1/jenkins.git
+  simple-theme-plugin:
+    elements:
+    - cssUrl:
+        url: https://tobix.github.io/jenkins-neo2-theme/dist/neo-light.css
