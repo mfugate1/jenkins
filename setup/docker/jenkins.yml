@@ -64,5 +64,5 @@ groovy:
   - script: >
       import jenkins.model.*;
       urlConfig = JenkinsLocationConfiguration.get();
-      urlConfig.setUrl(${JENKINS_URL});
+      urlConfig.setUrl('${JENKINS_URL}');
       urlConfig.save();
