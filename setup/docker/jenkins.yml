@@ -50,17 +50,6 @@ security:
   globalJobDslSecurityConfiguration:
     useScriptSecurity: false
 unclassified:
-  globalLibraries:
-    libraries:
-      - defaultVersion: main
-        implicit: true
-        includeInChangesets: false
-        name: jenkins-pipeline-library
-        retriever:
-          modernSCM:
-            scm:
-              git:
-                remote: https://github.com/mfugate1/jenkins.git
   simple-theme-plugin:
     elements:
     - cssUrl:
