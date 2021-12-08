@@ -9,6 +9,12 @@ jenkins:
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
+  securityRealm:
+    local:
+      allowSignup: false
+      users:
+        - id: mfugate
+          password: ${JENKINS_PASSWORD}
   clouds:
   - docker:
       containerCap: 1
