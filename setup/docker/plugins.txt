@@ -7,3 +7,4 @@ groovy
 http_request
 job-dsl
 simple-theme-plugin
+startup-trigger-plugin
