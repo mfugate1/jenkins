@@ -11,7 +11,7 @@ jenkins:
       allowAnonymousRead: false
   securityRealm:
     local:
-      allowSignup: false
+      allowsSignup: false
       users:
         - id: mfugate
           password: ${JENKINS_PASSWORD}
