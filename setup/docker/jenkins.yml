@@ -60,9 +60,6 @@ unclassified:
     elements:
     - cssUrl:
         url: https://tobix.github.io/jenkins-neo2-theme/dist/neo-light.css
-groovy:
-  - script: >
-      import jenkins.model.*;
-      urlConfig = JenkinsLocationConfiguration.get();
-      urlConfig.setUrl('${JENKINS_URL}');
-      urlConfig.save();
+  location:
+    adminAddress: jenkins@overlord.ddns.net
+    url: ${JENKINS_URL}
