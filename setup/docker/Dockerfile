@@ -2,6 +2,9 @@ ARG JENKINS_TAG=latest
 
 FROM jenkins/jenkins:${JENKINS_TAG}
 
+RUN addgroup --gid 998 docker
+RUN usermod -a -G docker jenkins
+
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
 
