@@ -1,5 +1,4 @@
 configuration-as-code
-configuration-as-code-groovy
 docker-plugin
 generic-webhook-trigger
 github
