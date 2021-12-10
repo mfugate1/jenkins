@@ -7,5 +7,5 @@ groovy
 http_request
 job-dsl
 simple-theme-plugin
-ssh
+ssh-agent
 startup-trigger-plugin
