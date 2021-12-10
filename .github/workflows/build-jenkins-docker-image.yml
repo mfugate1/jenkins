@@ -21,3 +21,4 @@ jobs:
           context: setup/docker
           push: true
           tags: mfugate/jenkins:latest
+      - run: "curl ${{ secrets.JENKINS_URL }}?token=${{ secrets.JENKINS_UPDATE_TOKEN }}"
