@@ -17,6 +17,20 @@ jenkins:
       users:
         - id: mfugate
           password: ${JENKINS_PASSWORD}
+  views:
+    - list:
+        columns:
+          - status
+          - weather
+          - jobName
+          - lastSuccess
+          - lastFailure
+          - lastDuration
+          - buildButton
+        jobNames:
+          - Job-DSL-Runner
+          - Update-Jenkins
+        name: Jenkins Management
   clouds:
   - docker:
       containerCap: 1
