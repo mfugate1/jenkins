@@ -1,4 +1,4 @@
-job ('Update-Jenkins') {
+job ('Jenkins-Update-Container') {
     label('docker')
     triggers {
         GenericTrigger {
@@ -11,6 +11,6 @@ job ('Update-Jenkins') {
         sshAgent('docker1-ssh')
     }
     steps {
-        shell(readFileFromWorkspace('jobs/Update-Jenkins/update-jenkins.sh'))
+        shell(readFileFromWorkspace('jobs/Jenkins/Update-Container/update-jenkins.sh'))
     }
 }
