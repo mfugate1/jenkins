@@ -32,7 +32,7 @@ jenkins:
           cpuPeriod: 0
           cpuQuota: 0
           image: mfugate/jenkins-worker:latest
-        labelString: "python3 chrome selenium docker"
+        labelString: "${DOCKER1_SSH_PRIVATE_KEY} docker"
         mode: EXCLUSIVE
         name: docker-node
         pullTimeout: 300
