@@ -29,9 +29,7 @@ jenkins:
           - lastFailure
           - lastDuration
           - buildButton
-        jobNames:
-          - Job-DSL-Runner
-          - Update-Jenkins
+        includeRegex: .*Jenkins.*
         name: Jenkins Management
   clouds:
   - docker:
