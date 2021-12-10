@@ -11,6 +11,6 @@ job ('Jenkins-Update-Container') {
         sshAgent('docker1-ssh')
     }
     steps {
-        shell(readFileFromWorkspace('jobs/Jenkins/Update-Container/update-jenkins.sh'))
+        shell(readFileFromWorkspace('jobs/Jenkins-Management/Update-Container/update-jenkins.sh'))
     }
 }
