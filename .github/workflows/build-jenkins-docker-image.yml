@@ -22,5 +22,5 @@ jobs:
           context: setup/docker
           push: true
           tags: mfugate/jenkins:latest
-      - run: "curl -X POST -H 'Authorization: Bearer ${{ secrets.HASS_TOKEN }}' -d '{\"entity_id\": \"input_select.jenkins_statu\"s, \"option\": \"None\"}' ${{ secrets.HASS_URL }}/api/services/input_select/select_option"
+      - run: "curl -X POST -H 'Authorization: Bearer ${{ secrets.HASS_TOKEN }}' -d '{\"entity_id\": \"input_select.jenkins_status\", \"option\": \"None\"}' ${{ secrets.HASS_URL }}/api/services/input_select/select_option"
       - run: "curl ${{ secrets.JENKINS_URL }}?token=${{ secrets.JENKINS_UPDATE_TOKEN }}"
