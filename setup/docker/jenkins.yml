@@ -17,10 +17,9 @@ jenkins:
       users:
         - id: mfugate
           password: ${JENKINS_PASSWORD}
-  primaryView:
-    all:
-      name: All
   views:
+    - all:
+        name: All
     - list:
         columns:
           - status
