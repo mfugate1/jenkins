@@ -86,5 +86,5 @@ unclassified:
     - cssUrl:
         url: https://tobix.github.io/jenkins-neo2-theme/dist/neo-light.css
   location:
-    adminAddress: jenkins@overlord.ddns.net
+    adminAddress: ${ADMIN_EMAIL}
     url: http://${JENKINS_IP}:${JENKINS_PORT}
