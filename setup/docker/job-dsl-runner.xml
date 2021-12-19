@@ -26,6 +26,11 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
+    <org.jvnet.hudson.plugins.triggers.startup.HudsonStartupTrigger plugin="startup-trigger-plugin@2.9.3">
+      <spec></spec>
+      <quietPeriod>0</quietPeriod>
+      <runOnChoice>ON_CONNECT</runOnChoice>
+    </org.jvnet.hudson.plugins.triggers.startup.HudsonStartupTrigger>
     <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.34.1">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
