@@ -17,6 +17,11 @@ jenkins:
       users:
         - id: mfugate
           password: ${JENKINS_PASSWORD}
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: JENKINS_IP
+            value: ${JENKINS_IP}
   views:
     - all:
         name: All
@@ -82,4 +87,4 @@ unclassified:
         url: https://tobix.github.io/jenkins-neo2-theme/dist/neo-light.css
   location:
     adminAddress: jenkins@overlord.ddns.net
-    url: ${JENKINS_URL}
+    url: http://${JENKINS_IP}:${JENKINS_PORT}

@@ -6,5 +6,5 @@ sleep 5
 docker-compose up -d --force-recreate
 EOF
 chmod +x update-jenkins.sh
-scp -o StrictHostKeyChecking=no update-jenkins.sh jenkins@192.168.1.172:~/
-ssh -o StrictHostKeyChecking=no jenkins@192.168.1.172 'nohup ./update-jenkins.sh > /dev/null 2>&1 &'
+scp -o StrictHostKeyChecking=no update-jenkins.sh jenkins@${JENKINS_IP}:~/
+ssh -o StrictHostKeyChecking=no jenkins@${JENKINS_IP} 'nohup ./update-jenkins.sh > /dev/null 2>&1 &'
