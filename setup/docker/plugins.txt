@@ -1,3 +1,4 @@
+azure-keyvault
 configuration-as-code
 docker-plugin
 generic-webhook-trigger
