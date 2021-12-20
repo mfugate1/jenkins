@@ -15,7 +15,7 @@ jenkins:
     local:
       allowsSignup: false
       users:
-        - id: mfugate
+        - id: ${JENKINS_USERNAME}
           password: ${JENKINS_PASSWORD}
   globalNodeProperties:
     - envVars:
