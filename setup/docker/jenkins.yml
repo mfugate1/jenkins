@@ -92,6 +92,13 @@ unclassified:
   azureKeyVault:
     keyVaultURL: ${AZ_VAULT_URL}
     credentialID: az-vault
+  buildDiscarders:
+    configuredBuildDiscarders:
+      - jobBuildDiscarder
+      - defaultBuildDiscarder:
+          discarder:
+            logRotator:
+              numToKeepStr: "10"
   simple-theme-plugin:
     elements:
     - cssUrl:
