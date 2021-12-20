@@ -85,6 +85,6 @@ job ('Jenkins-Update-Container') {
         }
     }
     steps {
-        shell(readFileFromWorkspace('jobs/Jenkins-Management/Update-Container/update-jenkins.sh'))
+        shell(readFileFromWorkspace('jobs/Jenkins-Management/Update-Truenas-Docker/update-jenkins.sh'))
     }
 }
