@@ -21,5 +21,5 @@ JENKINS_TRUENAS_DOCKER_UPDATE_TOKEN=$JENKINS_TRUENAS_DOCKER_UPDATE_TOKEN
 EOF
 chmod +x update-jenkins.sh
 scp -o StrictHostKeyChecking=no update-jenkins.sh jenkins@${JENKINS_IP}:~/
-scp -o StrictHostKeyChecking=no jenkins-secrets.properties jenkins@${JENKINS_IP}:~/docker/jenkins/
+scp -o StrictHostKeyChecking=no jenkins-secrets.properties jenkins@${JENKINS_IP}:/docker/jenkins/
 ssh -o StrictHostKeyChecking=no jenkins@${JENKINS_IP} 'nohup ./update-jenkins.sh > /dev/null 2>&1 &'
