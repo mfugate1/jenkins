@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 'setup/docker/**'
+      - '.github/workflows/**'
 jobs:
   docker-build:
     name: Build Jenkins Docker Image
