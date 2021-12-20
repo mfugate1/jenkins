@@ -6,6 +6,7 @@ sleep 5
 docker-compose up -d --force-recreate
 EOF
 cat << EOF > jenkins-secrets.properties
+AZ_VAULT_URL=$AZ_VAULT_URL
 AZURE_CLIENT_ID=$AZURE_CLIENT_ID
 AZURE_CLIENT_SECRET=$AZURE_CLIENT_SECRET
 AZURE_SUBSCRIPTION_ID=$AZURE_SUBSCRIPTION_ID

@@ -12,6 +12,11 @@ job ('Jenkins-Update-Container') {
         withAzureKeyvault {
             azureKeyVaultSecrets {
                 azureKeyVaultSecret {
+                    envVariable('AZ_VAULT_URL')
+                    name('AZ-VAULT-URL')
+                    secretType('Secret')
+                }
+                azureKeyVaultSecret {
                     envVariable('AZURE_CLIENT_ID')
                     name('AZURE-CLIENT-ID')
                     secretType('Secret')
