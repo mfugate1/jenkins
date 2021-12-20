@@ -1,4 +1,4 @@
-job ('Jenkins-Update-Container') {
+job ('Jenkins-Update-Truenas-Docker') {
     label('docker')
     triggers {
         GenericTrigger {
