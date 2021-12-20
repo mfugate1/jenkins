@@ -43,12 +43,12 @@
       <sandbox>false</sandbox>
       <ignoreExisting>false</ignoreExisting>
       <ignoreMissingFiles>true</ignoreMissingFiles>
-      <failOnMissingPlugin>false</failOnMissingPlugin>
+      <failOnMissingPlugin>true</failOnMissingPlugin>
       <failOnSeedCollision>false</failOnSeedCollision>
       <unstableOnDeprecation>true</unstableOnDeprecation>
-      <removedJobAction>IGNORE</removedJobAction>
-      <removedViewAction>IGNORE</removedViewAction>
-      <removedConfigFilesAction>IGNORE</removedConfigFilesAction>
+      <removedJobAction>DELETE</removedJobAction>
+      <removedViewAction>DELETE</removedViewAction>
+      <removedConfigFilesAction>DELETE</removedConfigFilesAction>
       <lookupStrategy>JENKINS_ROOT</lookupStrategy>
     </javaposse.jobdsl.plugin.ExecuteDslScripts>
   </builders>
