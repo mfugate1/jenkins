@@ -12,63 +12,68 @@ job ('Jenkins-Update-Container') {
         withAzureKeyvault {
             azureKeyVaultSecrets {
                 azureKeyVaultSecret {
-                    envVariable('AZURE-CLIENT-ID')
-                    name('AZURE_CLIENT_ID')
+                    envVariable('AZURE_CLIENT_ID')
+                    name('AZURE-CLIENT-ID')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('AZURE-CLIENT-SECRET')
-                    name('AZURE_CLIENT_SECRET')
+                    envVariable('AZURE_CLIENT_SECRET')
+                    name('AZURE-CLIENT-SECRET')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('AZURE-SUBSCRIPTION-ID')
-                    name('AZURE_SUBSCRIPTION_ID')
+                    envVariable('AZURE_SUBSCRIPTION_ID')
+                    name('AZURE-SUBSCRIPTION-ID')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('AZURE-TENANT')
-                    name('AZURE_TENANT')
+                    envVariable('AZURE_TENANT')
+                    name('AZURE-TENANT')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('DOCKER1-SSH-PRIVATE-KEY')
-                    name('DOCKER1_SSH_PRIVATE_KEY')
+                    envVariable('DOCKER1_SSH_PRIVATE_KEY')
+                    name('DOCKER1-SSH-PRIVATE-KEY')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('GARMIN-CONNECT-PASSWORD')
-                    name('GARMIN_CONNECT_PASSWORD')
+                    envVariable('GARMIN_CONNECT_PASSWORD')
+                    name('GARMIN-CONNECT-PASSWORD')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('GARMIN-CONNECT-USERNAME')
-                    name('GARMIN_CONNECT_USERNAME')
+                    envVariable('GARMIN_CONNECT_USERNAME')
+                    name('GARMIN-CONNECT-USERNAME')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('JENKINS-ADMIN-EMAIL')
-                    name('JENKINS_ADMIN_EMAIL')
+                    envVariable('JENKINS_ADMIN_EMAIL')
+                    name('JENKINS-ADMIN-EMAIL')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('JENKINS-IP')
-                    name('JENKINS_IP')
+                    envVariable('JENKINS_IP')
+                    name('JENKINS-IP')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('JENKINS-PASSWORD')
-                    name('JENKINS_PASSWORD')
+                    envVariable('JENKINS_PASSWORD')
+                    name('JENKINS-PASSWORD')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('JENKINS-PORT')
-                    name('JENKINS_PORT')
+                    envVariable('JENKINS_PORT')
+                    name('JENKINS-PORT')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('JENKINS-TRUENAS-DOCKER-UPDATE-TOKEN')
-                    name('JENKINS_TRUENAS_DOCKER_UPDATE_TOKEN')
+                    envVariable('JENKINS_TRUENAS_DOCKER_UPDATE_TOKEN')
+                    name('JENKINS-TRUENAS-DOCKER-UPDATE-TOKEN')
+                    secretType('Secret')
+                }
+                azureKeyVaultSecret {
+                    envVariable('JENKINS_USERNAME')
+                    name('JENKINS-USERNAME')
                     secretType('Secret')
                 }
             }
