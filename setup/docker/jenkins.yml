@@ -75,7 +75,7 @@ credentials:
             username: jenkins
         - string:
             scope: GLOBAL
-            id: update-jenkins-token
+            id: update-truenas-docker-token
             secret: ${JENKINS_TRUENAS_DOCKER_UPDATE_TOKEN}
         - azure:
             azureEnvironmentName: Azure
