@@ -37,48 +37,8 @@ job ('Jenkins-Update-Truenas-Docker') {
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('DOCKER1_SSH_PRIVATE_KEY')
-                    name('DOCKER1-SSH-PRIVATE-KEY')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('GARMIN_CONNECT_PASSWORD')
-                    name('GARMIN-CONNECT-PASSWORD')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('GARMIN_CONNECT_USERNAME')
-                    name('GARMIN-CONNECT-USERNAME')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('JENKINS_ADMIN_EMAIL')
-                    name('JENKINS-ADMIN-EMAIL')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('JENKINS_IP')
-                    name('JENKINS-IP')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('JENKINS_PASSWORD')
-                    name('JENKINS-PASSWORD')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('JENKINS_PORT')
-                    name('JENKINS-PORT')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('JENKINS_TRUENAS_DOCKER_UPDATE_TOKEN')
-                    name('JENKINS-TRUENAS-DOCKER-UPDATE-TOKEN')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('JENKINS_USERNAME')
-                    name('JENKINS-USERNAME')
+                    envVariable('TRUENAS_DOCKER_IP')
+                    name('TRUENAS-DOCKER-IP')
                     secretType('Secret')
                 }
             }

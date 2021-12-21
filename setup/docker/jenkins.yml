@@ -15,13 +15,8 @@ jenkins:
     local:
       allowsSignup: false
       users:
-        - id: ${JENKINS_USERNAME}
-          password: ${JENKINS_PASSWORD}
-  globalNodeProperties:
-    - envVars:
-        env:
-          - key: JENKINS_IP
-            value: ${JENKINS_IP}
+        - id: ${JENKINS-USERNAME}
+          password: ${JENKINS-PASSWORD}
   views:
     - all:
         name: All
@@ -65,7 +60,7 @@ credentials:
             privateKeySource:
               directEntry:
                 privateKey: |
-                  ${DOCKER1_SSH_PRIVATE_KEY}
+                  ${DOCKER1-SSH-PRIVATE-KEY}
             scope: GLOBAL
             username: jenkins
         - azure:
@@ -95,5 +90,5 @@ unclassified:
     - cssUrl:
         url: https://tobix.github.io/jenkins-neo2-theme/dist/neo-light.css
   location:
-    adminAddress: ${JENKINS_ADMIN_EMAIL}
-    url: http://${JENKINS_IP}:${JENKINS_PORT}
+    adminAddress: ${JENKINS-ADMIN-EMAIL}
+    url: http://${JENKINS-IP}:${JENKINS-PORT}
