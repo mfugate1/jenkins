@@ -17,20 +17,6 @@ jenkins:
       users:
         - id: ${JENKINS-USERNAME}
           password: ${JENKINS-PASSWORD}
-  views:
-    - all:
-        name: All
-    - list:
-        columns:
-          - status
-          - weather
-          - jobName
-          - lastSuccess
-          - lastFailure
-          - lastDuration
-          - buildButton
-        includeRegex: .*Jenkins.*
-        name: Jenkins Management
   clouds:
   - docker:
       containerCap: 1
