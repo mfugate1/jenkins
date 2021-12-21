@@ -37,6 +37,11 @@ job ('Update-Truenas-Docker') {
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
+                    envVariable('DOCKER1_SSH_PRIVATE_KEY')
+                    name('DOCKER1-SSH-PRIVATE-KEY')
+                    secretType('Secret')
+                }
+                azureKeyVaultSecret {
                     envVariable('TRUENAS_DOCKER_IP')
                     name('TRUENAS-DOCKER-IP')
                     secretType('Secret')
