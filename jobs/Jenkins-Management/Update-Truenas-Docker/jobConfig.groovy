@@ -4,7 +4,7 @@ job ('Jenkins-Update-Truenas-Docker') {
         GenericTrigger {
             regexpFilterExpression('')
             regexpFilterText('')
-            tokenCredentialId('update-truenas-docker-token')
+            tokenCredentialId('JENKINS-TRUENAS-DOCKER-UPDATE-TOKEN')
         }
     }
     wrappers {
