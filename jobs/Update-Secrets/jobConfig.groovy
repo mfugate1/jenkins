@@ -1,3 +1,8 @@
+String script = '''\
+echo "$validationUrl"
+echo 'Running jobs to update everything that uses Azure secrets'
+'''
+
 job ('Update-Secrets') {
     label('docker')
     properties {
@@ -24,6 +29,6 @@ job ('Update-Secrets') {
         }
     }
     steps {
-        shell(readFileFromWorkspace('jobs/Update-Secrets/update-secrets.sh'))
+        shell(script)
     }
 }
