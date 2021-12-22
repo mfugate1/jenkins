@@ -1,0 +1,18 @@
+List repos = [
+    'home-assistant-config',
+    'jenkins'
+]
+
+node ('docker') {
+    for (String repo in repos) {
+        dir (repo) {
+            git url: "https://github.com/mfugate1/${repo}.git"
+        }
+    }
+
+    jobDsl (
+        targets: '**/jobConfig.groovy',
+        removedJobAction: 'DELETE',
+        lookupStrategy: 'SEED_JOB'
+    )
+}
