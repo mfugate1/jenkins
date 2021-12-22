@@ -17,6 +17,13 @@ jenkins:
       users:
         - id: ${JENKINS-USERNAME}
           password: ${JENKINS-PASSWORD}
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: HASS_CONFIG_DIR
+            value: /docker/home-assistant
+          - key: DOCKER1_REMOTE_USER
+            value: jenkins
   clouds:
   - docker:
       containerCap: 1
