@@ -8,6 +8,7 @@ github-branch-source
 groovy
 http_request
 job-dsl
+parameterized-trigger
 pipeline-utility-steps
 simple-theme-plugin
 ssh-agent
