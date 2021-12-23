@@ -20,10 +20,12 @@ jenkins:
   globalNodeProperties:
     - envVars:
         env:
-          - key: HASS_CONFIG_DIR
-            value: /docker/home-assistant
           - key: DOCKER1_REMOTE_USER
             value: jenkins
+          - key: HASS_CONFIG_DIR
+            value: /docker/home-assistant
+          - key: HASS_TEST_CONFIG_DIR
+            value: /docker/home-assistant-test
   clouds:
   - docker:
       containerCap: 1
