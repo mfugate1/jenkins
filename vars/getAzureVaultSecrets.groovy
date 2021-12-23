@@ -11,7 +11,7 @@ Map call() {
     ).each {
         String id = it.id.replace('-', '_')
         secrets["${id}_USERNAME"] = it.username
-        secrets["${id}_PASSWORD"] = it.password
+        secrets["${id}_PASSWORD"] = it.password.plainText
     }
 
     return secrets
