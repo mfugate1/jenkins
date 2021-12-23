@@ -28,7 +28,7 @@ jenkins:
             value: /docker/home-assistant-test
   clouds:
   - docker:
-      containerCap: 1
+      containerCap: 3
       dockerApi:
         connectTimeout: 60
         dockerHost:
