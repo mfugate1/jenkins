@@ -4,6 +4,7 @@ configuration-as-code
 docker-plugin
 generic-webhook-trigger
 github
+github-branch-source
 groovy
 http_request
 job-dsl
