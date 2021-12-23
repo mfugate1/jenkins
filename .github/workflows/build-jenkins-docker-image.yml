@@ -37,4 +37,4 @@ jobs:
           push: true
           tags: mfugate/jenkins:latest
       - run: "curl -X POST -H 'Authorization: Bearer ${{ steps.az.outputs.HASS-TOKEN }}' -d '{\"entity_id\": \"input_select.jenkins_status\", \"option\": \"None\"}' ${{ steps.az.outputs.OVERLORD-URL }}/api/services/input_select/select_option"
-      - run: "curl ${{ steps.az.outputs.OVERLORD-URL }}/jenkins-webhook-truenas?token=${{ steps.az.outputs.JENKINS-TRUENAS-DOCKER-UPDATE-TOKEN }}"
+      - run: "curl ${{ steps.az.outputs.OVERLORD-URL }}/jenkins-webhook-truenas?token=${{ steps.az.outputs.JENKINS-TRUENAS-DOCKER-UPDATE-TOKEN }} -X POST -d '{}'"
