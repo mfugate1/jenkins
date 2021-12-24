@@ -10,6 +10,7 @@ Map call(String fileGlob, Map secrets = [:]) {
         )
         files[file] = getSecretsInFile(contents, secrets)
     }
+    return files
 }
 
 @NonCPS
