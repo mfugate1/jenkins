@@ -1,34 +1,60 @@
 String script = '''\
-echo "$validationUrl"
-echo 'Running jobs to update everything that uses Azure secrets'
+if (params.updatedSecrets) {
+
+    // Can't use join directly on the result from readJSON, but collect
+    // converts it to a normal list that we can use join on
+    String secrets = readJSON(text: params.updatedSecrets).collect{it}.join(',')
+
+    build (
+        job: 'Update-Home-Assistant-Config/main',
+        wait: false,
+        parameters: [
+            string(name: 'updatedSecrets', value: secrets)
+        ]
+    )
+} else {
+    echo 'No secrets to update'
+}
 '''
 
-job ('Update-Secrets') {
-    label('docker')
+
+pipelineJob ('Update-Secrets') {
+    definition {
+        cps {
+            script(script)
+        }
+    }
     properties {
         parameters {
             parameterDefinitions {
                 string {
                     name('validationUrl')
                 }
-            }
-        }
-    }
-    triggers {
-        GenericTrigger {
-            regexpFilterExpression('')
-            regexpFilterText('')
-            tokenCredentialId('AZURE-KEY-EVENT-TOKEN')
-            genericVariables {
-                genericVariable {
-                    key('validationUrl')
-                    value('$.[0].data.validationUrl')
-                    expressionType('JSONPath')
+                string {
+                    name('updatedSecrets')
                 }
             }
         }
-    }
-    steps {
-        shell(script)
+        pipelineTriggers {
+            triggers {
+                GenericTrigger {
+                    regexpFilterExpression('')
+                    regexpFilterText('')
+                    tokenCredentialId('AZURE-KEY-EVENT-TOKEN')
+                    genericVariables {
+                        genericVariable {
+                            key('validationUrl')
+                            value('$.[0].data.validationUrl')
+                            expressionType('JSONPath')
+                        }
+                        genericVariable {
+                            key('updatedSecrets')
+                            value('$.*.data.ObjectName')
+                            expressionType('JSONPath')
+                        }
+                    }
+                }
+            }
+        }
     }
 }
