@@ -1,4 +1,4 @@
-String script = '''\
+String jenkinsfile = '''\
 if (params.updatedSecrets) {
 
     // Can't use join directly on the result from readJSON, but collect
@@ -21,7 +21,7 @@ if (params.updatedSecrets) {
 pipelineJob ('Update-Secrets') {
     definition {
         cps {
-            script(script)
+            script(jenkinsfile)
         }
     }
     properties {
