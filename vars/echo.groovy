@@ -6,10 +6,11 @@ import static groovy.json.JsonOutput.*
 
 void call(def x, boolean prettyPrintMap = false, String text = '') {
     try {
+        if (text) text = "${text}\n"
         if (prettyPrintMap) {
-            steps.echo "${text}\n${prettyPrint(toJson(x))}"
+            steps.echo "${text}${prettyPrint(toJson(x))}"
         } else {
-            steps.echo "${text}\n${x.toString()}"
+            steps.echo "${text}${x.toString()}"
         }
     } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException ex) {
         throw ex
