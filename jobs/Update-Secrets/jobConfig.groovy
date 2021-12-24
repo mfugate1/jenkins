@@ -3,7 +3,7 @@ if (params.updatedSecrets) {
 
     // Can't use join directly on the result from readJSON, but collect
     // converts it to a normal list that we can use join on
-    String secrets = readJSON(text: params.updatedSecrets).collect{it}.join(',')
+    String secrets = readJSON(text: params.updatedSecrets).collect{it}.join(',').replace('-', '_')
 
     build (
         job: 'Update-Home-Assistant-Config/main',
