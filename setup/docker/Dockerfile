@@ -1,11 +1,13 @@
-ARG JENKINS_TAG=latest
+ARG JENKINS_TAG=alpine
 
 FROM jenkins/jenkins:${JENKINS_TAG}
 
 USER root
 
-RUN addgroup --gid 998 docker
-RUN usermod -a -G docker jenkins
+RUN apk add --no-cache rsync
+
+RUN addgroup -g 998 docker
+RUN addgroup jenkins docker
 
 USER jenkins
 

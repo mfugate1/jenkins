@@ -1,9 +1,9 @@
 jenkins:
   slaveAgentPort: 50000
   systemMessage: Overlord Jenkins
-  numExecutors: 0
+  numExecutors: 1
   quietPeriod: 0
-  mode: EXCLUSIVE
+  mode: NORMAL
   agentProtocols:
     - JNLP4-connect
   authorizationStrategy:
