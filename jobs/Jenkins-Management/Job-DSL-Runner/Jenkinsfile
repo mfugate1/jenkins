@@ -3,7 +3,7 @@ List repos = [
     'jenkins'
 ]
 
-node ('docker') {
+node ('built-in') {
     for (String repo in repos) {
         dir (repo) {
             git url: "https://github.com/mfugate1/${repo}.git", branch: 'main'
