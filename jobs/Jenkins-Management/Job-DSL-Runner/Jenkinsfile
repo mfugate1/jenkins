@@ -1,6 +1,7 @@
 List repos = [
     'home-assistant-config',
-    'jenkins'
+    'jenkins',
+    'server-management'
 ]
 
 node ('built-in') {
