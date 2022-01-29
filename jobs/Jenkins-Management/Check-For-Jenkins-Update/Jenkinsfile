@@ -1,0 +1,15 @@
+String latestVersion = readJSON(
+    text: httpRequest (
+        url: 'https://api.github.com/repos/jenkinsci/jenkins/releases/latest'
+    ).content
+).name
+
+if (latestVersion != Jenkins.get().VERSION) {
+    httpRequest (
+        url: 'https://api.github.com/repos/mfugate1/jenkins/actions/workflows/build-jenkins-docker-image.yml/dispatches',
+        authentication: 'GITHUB',
+        httpMode: 'POST',
+        requestBody: '{"ref": "main"}',
+        validResponseCodes: '204'
+    )
+}
