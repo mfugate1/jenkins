@@ -4,7 +4,12 @@ String latestVersion = readJSON(
     ).content
 ).name
 
-if (latestVersion != getJenkinsVersion()) {
+String currentVersion = getJenkinsVersion()
+
+echo "Current Version: ${currentVersion}\nLatest Version: ${latestVersion}"
+
+if (latestVersion != currentVersion) {
+    echo "Starting workflow to rebuild Jenkins with latest version"
     httpRequest (
         url: 'https://api.github.com/repos/mfugate1/jenkins/actions/workflows/build-jenkins-docker-image.yml/dispatches',
         authentication: 'GITHUB',
