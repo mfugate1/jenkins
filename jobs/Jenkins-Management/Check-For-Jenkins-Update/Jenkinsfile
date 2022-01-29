@@ -4,7 +4,7 @@ String latestVersion = readJSON(
     ).content
 ).name
 
-if (latestVersion != Jenkins.get().VERSION) {
+if (latestVersion != getJenkinsVersion()) {
     httpRequest (
         url: 'https://api.github.com/repos/mfugate1/jenkins/actions/workflows/build-jenkins-docker-image.yml/dispatches',
         authentication: 'GITHUB',
