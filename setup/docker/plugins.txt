@@ -1,4 +1,3 @@
-ansible
 azure-keyvault
 build-discarder
 configuration-as-code
