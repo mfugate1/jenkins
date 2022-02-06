@@ -64,6 +64,11 @@ job ('Update-Truenas-Docker') {
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
+                    envVariable('GITHUB_HASS_CONFIG_SSH_KEY')
+                    name('GITHUB-HASS-CONFIG-SSH-KEY')
+                    secretType('Secret')
+                }
+                azureKeyVaultSecret {
                     envVariable('TRUENAS_DOCKER_IP')
                     name('TRUENAS-DOCKER-IP')
                     secretType('Secret')
