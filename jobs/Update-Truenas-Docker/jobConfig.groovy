@@ -5,6 +5,7 @@ git pull
 docker-compose pull
 sleep 5
 docker-compose up -d --force-recreate
+rm -f /docker/jenkins/jenkins-secrets.properties
 EOF
 cat << EOF > jenkins-secrets.properties
 AZ_VAULT_URL=$AZ_VAULT_URL
