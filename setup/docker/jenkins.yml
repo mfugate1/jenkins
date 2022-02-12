@@ -59,11 +59,11 @@ credentials:
             scope: GLOBAL
             username: jenkins
         - basicSSHUserPrivateKey:
-            id: github-hass-config-ssh
+            id: github-ssh
             privateKeySource:
               directEntry:
                 privateKey: |
-                  ${GITHUB_HASS_CONFIG_SSH_KEY}
+                  ${GITHUB_SSH_KEY}
             scope: GLOBAL
             username: jenkins
         - azure:
