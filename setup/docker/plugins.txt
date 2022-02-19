@@ -12,6 +12,7 @@ parameterized-trigger
 pipeline-utility-steps
 rebuild
 simple-theme-plugin
+ssh
 ssh-agent
 startup-trigger-plugin
 workflow-aggregator
