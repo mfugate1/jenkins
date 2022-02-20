@@ -11,6 +11,8 @@ node ('built-in') {
         }
     }
 
+    reloadAzureKeyVaultCache()
+
     jobDsl (
         targets: '**/jobConfig.groovy',
         removedJobAction: 'DELETE',
