@@ -92,10 +92,6 @@ unclassified:
             scm:
               git:
                 remote: https://github.com/mfugate1/jenkins.git
-  simple-theme-plugin:
-    elements:
-    - cssUrl:
-        url: https://tobix.github.io/jenkins-neo2-theme/dist/neo-light.css
   location:
     adminAddress: ${JENKINS-ADMIN-EMAIL}
     url: http://${JENKINS-IP}:${JENKINS-PORT}
