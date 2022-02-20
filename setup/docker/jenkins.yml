@@ -26,6 +26,8 @@ jenkins:
             value: /docker/home-assistant
           - key: HASS_TEST_CONFIG_DIR
             value: /docker/home-assistant-test
+          - key: JENKINS_SSH_KEY
+            value: jenkins-ssh
   clouds:
   - docker:
       containerCap: 3
