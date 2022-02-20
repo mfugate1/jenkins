@@ -13,8 +13,7 @@ AZURE_CLIENT_ID=$AZURE_CLIENT_ID
 AZURE_CLIENT_SECRET=$AZURE_CLIENT_SECRET
 AZURE_SUBSCRIPTION_ID=$AZURE_SUBSCRIPTION_ID
 AZURE_TENANT=$AZURE_TENANT
-DOCKER1_SSH_PRIVATE_KEY=$DOCKER1_SSH_PRIVATE_KEY
-GITHUB_SSH_KEY=$GITHUB_SSH_KEY
+JENKINS_SSH_KEY=$JENKINS_SSH_KEY
 EOF
 chmod +x update-jenkins.sh
 scp -o StrictHostKeyChecking=no update-jenkins.sh jenkins@${TRUENAS_DOCKER_IP}:~/
@@ -32,7 +31,7 @@ job ('Update-Truenas-Docker') {
         }
     }
     wrappers {
-        sshAgent('docker1-ssh')
+        sshAgent('jenkins-ssh')
         withAzureKeyvault {
             azureKeyVaultSecrets {
                 azureKeyVaultSecret {
@@ -61,13 +60,8 @@ job ('Update-Truenas-Docker') {
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {
-                    envVariable('DOCKER1_SSH_PRIVATE_KEY')
-                    name('DOCKER1-SSH-PRIVATE-KEY')
-                    secretType('Secret')
-                }
-                azureKeyVaultSecret {
-                    envVariable('GITHUB_SSH_KEY')
-                    name('GITHUB-SSH-KEY')
+                    envVariable('JENKINS_SSH_KEY')
+                    name('JENKINS-SSH-KEY')
                     secretType('Secret')
                 }
                 azureKeyVaultSecret {

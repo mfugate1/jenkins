@@ -51,23 +51,14 @@ credentials:
     domainCredentials:
       - credentials:
         - basicSSHUserPrivateKey:
-            id: docker1-ssh
+            id: jenkins-ssh
             privateKeySource:
               directEntry:
                 privateKey: |
-                  ${DOCKER1_SSH_PRIVATE_KEY}
+                  ${JENKINS_SSH_KEY}
             scope: GLOBAL
             username: jenkins
             description: Docker1 SSH Key
-        - basicSSHUserPrivateKey:
-            id: github-ssh
-            privateKeySource:
-              directEntry:
-                privateKey: |
-                  ${GITHUB_SSH_KEY}
-            scope: GLOBAL
-            username: jenkins
-            description: GitHub SSH Key
         - azure:
             azureEnvironmentName: Azure
             clientId: ${AZURE_CLIENT_ID}
