@@ -6,6 +6,10 @@ if (params.updatedSecrets) {
     String secrets = readJSON(text: params.updatedSecrets).collect{it}.join(',').replace('-', '_')
 
     build (
+        job: "Jenkins-Job-DSL-Runner"
+    )
+
+    build (
         job: 'Update-Home-Assistant-Config/main',
         wait: false,
         parameters: [
