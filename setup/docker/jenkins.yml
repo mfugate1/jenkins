@@ -48,6 +48,15 @@ jenkins:
         name: docker-node
         pullTimeout: 300
         stopTimeout: 1
+      - connector: attach
+        dockerTemplateBase:
+          cpuPeriod: 0
+          cpuQuota: 0
+          image: mfugate/jenkins-agent:ansible
+        labelString: ansible
+        mode: EXCLUSIVE
+        pullTimeout: 300
+        stopTimeout: 1
 credentials:
   system:
     domainCredentials:
