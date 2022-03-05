@@ -45,7 +45,7 @@ jenkins:
           image: mfugate/jenkins-worker:latest
         labelString: "python3 chrome selenium docker"
         mode: EXCLUSIVE
-        name: docker-node
+        pullStrategy: PULL_ALWAYS
         pullTimeout: 300
         stopTimeout: 1
       - connector: attach
@@ -55,6 +55,7 @@ jenkins:
           image: mfugate/jenkins-agent:ansible
         labelString: ansible
         mode: EXCLUSIVE
+        pullStrategy: PULL_ALWAYS
         pullTimeout: 300
         stopTimeout: 1
 credentials:
