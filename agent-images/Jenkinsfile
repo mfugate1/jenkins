@@ -1,0 +1,14 @@
+node ("built-in") {
+    checkout scm
+
+    docker.withRegistry("https://registry.hub.docker.com", "DOCKERHUB-PASSWORD") {
+        for (String file in findFiles(glob: "agent-images/**/Dockerfile").collect{it.path}) {
+            String name = file - "agent-images/" - "/Dockerfile"
+            def image = docker.build (
+                "mfugate/${name}:latest",
+                "-f ${file}"
+            )
+            image.push()
+        }
+    }
+}
