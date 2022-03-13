@@ -1,8 +1,8 @@
 azure-keyvault
 build-discarder
 configuration-as-code
-docker-build-step
 docker-plugin
+docker-workflow
 generic-webhook-trigger
 github
 github-branch-source
