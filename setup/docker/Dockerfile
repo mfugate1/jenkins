@@ -3,7 +3,10 @@ FROM jenkins/jenkins:alpine
 USER root
 
 RUN apk add --no-cache rsync docker
+
+RUN addgroup -g 998 docker2
 RUN addgroup jenkins docker
+RUN addgroup jenkins docker2
 
 USER jenkins
 
