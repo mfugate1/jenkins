@@ -1,12 +1,8 @@
-ARG JENKINS_TAG=alpine
-
-FROM jenkins/jenkins:${JENKINS_TAG}
+FROM jenkins/jenkins:alpine
 
 USER root
 
-RUN apk add --no-cache rsync
-
-RUN addgroup -g 998 docker
+RUN apk add --no-cache rsync docker
 RUN addgroup jenkins docker
 
 USER jenkins
