@@ -28,6 +28,7 @@ if(plugins.size() != 0 && count == plugins.size()) {
 
 job ('Jenkins-Update-Plugins') {
     label('built-in')
+    disabled()
     triggers {
         cron('H 1 * * *')
     }
