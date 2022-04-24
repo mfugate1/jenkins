@@ -27,7 +27,7 @@ if(plugins.size() != 0 && count == plugins.size()) {
 '''
 
 job ('Jenkins-Update-Plugins') {
-    label('docker')
+    label('built-in')
     triggers {
         cron('H 1 * * *')
     }
