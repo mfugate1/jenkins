@@ -1,7 +1,8 @@
 azure-keyvault
 build-discarder
 configuration-as-code
-docker-plugin
+docker-java-api:3.1.5
+docker-plugin:1.2.6
 docker-workflow
 generic-webhook-trigger
 github
