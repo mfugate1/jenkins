@@ -1,4 +1,8 @@
 String script = '''\
+List skipUpdate = [
+    "docker-plugin",
+    "docker-java-api"
+]
 jenkins.model.Jenkins.getInstance().getUpdateCenter().getSites().each { site ->
   site.updateDirectlyNow(hudson.model.DownloadService.signatureCheck)
 }
@@ -8,7 +12,7 @@ hudson.model.DownloadService.Downloadable.all().each { downloadable ->
 }
 
 def plugins = jenkins.model.Jenkins.instance.pluginManager.activePlugins.findAll {
-  it -> it.hasUpdate()
+  it -> it.hasUpdate() && !skipUpdate.contains(it.getShortName())
 }.collect {
   it -> it.getShortName()
 }
@@ -28,7 +32,6 @@ if(plugins.size() != 0 && count == plugins.size()) {
 
 job ('Jenkins-Update-Plugins') {
     label('built-in')
-    disabled()
     triggers {
         cron('H 1 * * *')
     }
