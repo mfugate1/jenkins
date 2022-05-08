@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 'agent-images/**'
+      - '.github/workflows/build-agent-images.yml'
 jobs:
   setup:
     runs-on: ubuntu-latest

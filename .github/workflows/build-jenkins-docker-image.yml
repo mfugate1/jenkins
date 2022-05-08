@@ -5,7 +5,7 @@ on:
       - main
     paths:
       - 'setup/docker/**'
-      - '.github/workflows/**'
+      - '.github/workflows/build-jenkins-docker-image.yml'
   workflow_dispatch:
 jobs:
   docker-build:
