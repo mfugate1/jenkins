@@ -37,6 +37,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - uses: Azure/get-keyvault-secrets@v1
+        id: az
         with: 
           keyvault: overlord-vault
           secrets: DOCKERHUB-USERNAME, DOCKERHUB-PASSWORD
