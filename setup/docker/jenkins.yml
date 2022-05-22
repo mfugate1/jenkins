@@ -66,8 +66,7 @@ credentials:
             id: jenkins-ssh
             privateKeySource:
               directEntry:
-                privateKey: |
-                  ${JENKINS-SSH-KEY}
+                privateKey: ${JENKINS-SSH-KEY}
             scope: GLOBAL
             username: jenkins
             description: Jenkins SSH Key
