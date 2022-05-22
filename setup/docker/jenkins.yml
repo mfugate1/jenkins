@@ -106,4 +106,4 @@ unclassified:
                 remote: https://github.com/mfugate1/jenkins.git
   location:
     adminAddress: ${JENKINS-ADMIN-EMAIL}
-    url: http://${JENKINS-IP}:${JENKINS-PORT}
+    url: http://${TRUENAS-DOCKER-IP}:${JENKINS-PORT}
