@@ -20,14 +20,10 @@ jenkins:
   globalNodeProperties:
     - envVars:
         env:
-          - key: DOCKER1_REMOTE_USER
-            value: jenkins
           - key: HASS_CONFIG_DIR
             value: /docker/home-assistant
           - key: HASS_TEST_CONFIG_DIR
             value: /docker/home-assistant-test
-          - key: JENKINS_SSH_KEY
-            value: jenkins-ssh
 credentials:
   system:
     domainCredentials:
@@ -66,5 +62,5 @@ unclassified:
               git:
                 remote: https://github.com/mfugate1/jenkins.git
   location:
-    adminAddress: ${JENKINS-ADMIN-EMAIL}
-    url: http://${TRUENAS-DOCKER-IP}:${JENKINS-PORT}
+    adminAddress: jenkins@overlordserver.ddns.net
+    url: http://jenkins.overlordserver.ddns.net
