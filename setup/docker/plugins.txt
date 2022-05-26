@@ -8,10 +8,8 @@ github-branch-source
 groovy
 http_request
 job-dsl
-parameterized-trigger
 pipeline-utility-steps
 rebuild
-ssh-agent
 startup-trigger-plugin
 workflow-aggregator
 ws-cleanup
