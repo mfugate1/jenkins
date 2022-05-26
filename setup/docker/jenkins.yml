@@ -62,14 +62,6 @@ credentials:
   system:
     domainCredentials:
       - credentials:
-        - basicSSHUserPrivateKey:
-            id: jenkins-ssh
-            privateKeySource:
-              directEntry:
-                privateKey: ${readFile:/var/jenkins_home/.ssh/id_rsa}
-            scope: GLOBAL
-            username: jenkins
-            description: Jenkins SSH Key
         - azure:
             azureEnvironmentName: Azure
             clientId: ${AZURE_CLIENT_ID}
