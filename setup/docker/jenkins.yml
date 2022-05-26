@@ -28,36 +28,6 @@ jenkins:
             value: /docker/home-assistant-test
           - key: JENKINS_SSH_KEY
             value: jenkins-ssh
-  clouds:
-  - docker:
-      containerCap: 3
-      dockerApi:
-        connectTimeout: 60
-        dockerHost:
-          uri: unix:///var/run/docker.sock
-        readTimeout: 60
-      name: docker
-      templates:
-      - connector: attach
-        dockerTemplateBase:
-          cpuPeriod: 0
-          cpuQuota: 0
-          image: mfugate/jenkins-worker:latest
-        labelString: "python3 chrome selenium docker"
-        mode: EXCLUSIVE
-        pullStrategy: PULL_ALWAYS
-        pullTimeout: 300
-        stopTimeout: 1
-      - connector: attach
-        dockerTemplateBase:
-          cpuPeriod: 0
-          cpuQuota: 0
-          image: mfugate/jenkins-agent:ansible
-        labelString: ansible
-        mode: EXCLUSIVE
-        pullStrategy: PULL_ALWAYS
-        pullTimeout: 300
-        stopTimeout: 1
 credentials:
   system:
     domainCredentials:
