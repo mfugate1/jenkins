@@ -1,12 +1,10 @@
-FROM jenkins/jenkins:alpine
+FROM jenkins/jenkins:latest
 
 USER root
 
-RUN apk add --no-cache rsync docker
-
-RUN addgroup -g 998 docker2
-RUN addgroup jenkins docker
-RUN addgroup jenkins docker2
+RUN apt update && \
+    apt upgrade -y && \
+    apt install -y ansible
 
 USER jenkins
 
