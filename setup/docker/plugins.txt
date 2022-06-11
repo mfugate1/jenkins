@@ -11,5 +11,6 @@ job-dsl
 pipeline-utility-steps
 rebuild
 startup-trigger-plugin
+uno-choice
 workflow-aggregator
 ws-cleanup
