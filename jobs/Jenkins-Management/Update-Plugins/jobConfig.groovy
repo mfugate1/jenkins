@@ -1,8 +1,6 @@
 String script = '''\
-List skipUpdate = [
-    "docker-plugin",
-    "docker-java-api"
-]
+List skipUpdate = []
+
 jenkins.model.Jenkins.getInstance().getUpdateCenter().getSites().each { site ->
   site.updateDirectlyNow(hudson.model.DownloadService.signatureCheck)
 }
@@ -11,9 +9,7 @@ hudson.model.DownloadService.Downloadable.all().each { downloadable ->
   downloadable.updateNow();
 }
 
-def plugins = jenkins.model.Jenkins.instance.pluginManager.activePlugins.findAll {
-  it -> it.hasUpdate() && !skipUpdate.contains(it.getShortName())
-}.collect {
+def plugins = jenkins.model.Jenkins.instance.pluginManager.activePlugins.collect {
   it -> it.getShortName()
 }
 
