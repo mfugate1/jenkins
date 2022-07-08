@@ -6,7 +6,9 @@ RUN apt update && \
     apt upgrade -y && \
     apt install -y python3 python3-pip
 
-RUN pip3 install ansible msrest msrestazure azure-common
+RUN pip3 install ansible
+RUN ansible-galaxy collection install azure.azcollection
+RUN pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt
 
 USER jenkins
 
