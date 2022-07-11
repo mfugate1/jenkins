@@ -8,6 +8,7 @@ github-branch-source
 groovy
 http_request
 job-dsl
+parameterized-scheduler
 pipeline-utility-steps
 rebuild
 startup-trigger-plugin
