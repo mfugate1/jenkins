@@ -7,6 +7,8 @@ on:
       - 'setup/docker/**'
       - '.github/workflows/build-jenkins-docker-image.yml'
   workflow_dispatch:
+permissions:
+  id-token: write
 jobs:
   docker-build:
     name: Build Jenkins Docker Image
