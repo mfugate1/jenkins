@@ -8,7 +8,7 @@ RUN apt update && \
 
 RUN pip3 install ansible
 RUN ansible-galaxy collection install azure.azcollection
-RUN pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt
+RUN pip3 install -r /usr/local/lib/python3.9/dist-packages/ansible_collections/azure/azcollection/requirements-azure.txt
 
 USER jenkins
 
