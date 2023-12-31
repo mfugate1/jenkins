@@ -40,9 +40,9 @@ security:
   globalJobDslSecurityConfiguration:
     useScriptSecurity: false
 unclassified:
-  azureKeyVault:
-    keyVaultURL: ${AZ_VAULT_URL}
-    credentialID: az-vault
+  # azureKeyVault:
+  #   keyVaultURL: ${AZ_VAULT_URL}
+  #   credentialID: az-vault
   buildDiscarders:
     configuredBuildDiscarders:
       - jobBuildDiscarder
