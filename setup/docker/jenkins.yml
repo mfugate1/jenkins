@@ -24,18 +24,18 @@ jenkins:
             value: /docker/home-assistant
           - key: HASS_TEST_CONFIG_DIR
             value: /docker/home-assistant-test
-credentials:
-  system:
-    domainCredentials:
-      - credentials:
-        - azure:
-            azureEnvironmentName: Azure
-            clientId: ${AZURE_CLIENT_ID}
-            clientSecret: ${AZURE_CLIENT_SECRET}
-            subscriptionId: ${AZURE_SUBSCRIPTION_ID}
-            tenant: ${AZURE_TENANT}
-            id: az-vault
-            scope: GLOBAL
+# credentials:
+#   system:
+#     domainCredentials:
+#       - credentials:
+#         - azure:
+#             azureEnvironmentName: Azure
+#             clientId: ${AZURE_CLIENT_ID}
+#             clientSecret: ${AZURE_CLIENT_SECRET}
+#             subscriptionId: ${AZURE_SUBSCRIPTION_ID}
+#             tenant: ${AZURE_TENANT}
+#             id: az-vault
+#             scope: GLOBAL
 security:
   globalJobDslSecurityConfiguration:
     useScriptSecurity: false
